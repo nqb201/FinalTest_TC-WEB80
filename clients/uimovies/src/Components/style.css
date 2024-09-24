@@ -1,0 +1,507 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #85888b;
+  }
+
+
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffbf55;
+  }
+
+  h2, h3 {
+    font-weight: 500;
+  }
+
+  .movie-card p {
+    font-weight: 100;
+  }
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  height: 100%;
+  overflow: hidden;
+}
+
+
+  /* HEADER */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 30px 20px 20px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 1000px; 
+    margin: 0 auto;   
+}
+
+.header-left, .header-right {
+    width: 50px;
+}
+
+.header-center {
+    flex: 1;
+    text-align: center;
+}
+
+.header-center h1 {
+    font-size: 24px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+}
+
+.ui-badge {
+    background-color: #F27022;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    margin-left: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.menu-button, .search-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    display: inline-flex;
+    align-items: center;
+}
+
+.logo a {
+  text-decoration: none; 
+}
+
+
+/* Dropdown menu styles */
+.header-left {
+  position: relative; 
+}
+
+.dropdown-menu {
+  display: flex; 
+  justify-content: space-around; 
+  background-color: white; 
+  position: absolute; 
+  top: 50px; 
+  left: 0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+  z-index: 100; 
+}
+
+.menu-button {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.dropdown-item {
+  padding: 10px 15px; 
+  text-align: center;
+  text-decoration: none; 
+  font-weight: bold;
+}
+
+.dropdown-item:hover {
+  background-color: #ffbf55; 
+  border-radius: 5px;
+}
+
+  /* SEARCH */
+
+  .search-icon {
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+  
+  .search-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin: -50px 60px 0px 0px
+  }
+  
+  .search-bar input {
+    padding: 5px;
+    width: 200px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .search-bar button {
+    padding: 5px 10px;
+    margin-left: 10px;
+    font-size: 1rem;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .search-bar button:hover {
+    background-color: #ff4500;
+  }
+  
+  /* MOVIE APP */
+  .movie-app {
+    display: inline-block;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .movie-list {
+    display: flex;
+    justify-content: space-between; 
+  }
+  
+  /* MOVIE CARD */
+  .movie-card {
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    margin: 10px;  
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    width: 220px; 
+    height: 400px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .movie-image {
+    width: 100%;
+    height: 300px; 
+    object-fit: cover; 
+    border-radius: 10px;
+  }
+  
+/*ĐIỀU HƯỚNG */
+.arrow-button {
+  background-color: #fff;
+  border: none;
+  font-size: 24px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.arrow-button:hover {
+  background-color: #f0f0f0; 
+}
+
+/* CĂN CHỈNH ĐIỀU HƯỚNG */
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+
+  /* POP UP */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup {
+  background-color: #fff;
+  border-radius: 10px;
+  max-width: 900px;
+  width: 80%;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.popup-content {
+  display: flex;  
+  flex-direction: row;
+  align-items: center; 
+  justify-content: flex-start;
+  width: 100%;
+  height: 60vh;
+}
+
+/* CSS cho hình ảnh trong popup */
+.popup-image {
+  max-width: 40%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  margin: -50px 0px 0px -50px;
+  transform: translateY(-20px);
+}
+
+/* CSS cho thông tin popup */
+.popup-info {
+  flex-grow: 1; 
+  max-width: 60%; 
+  margin-left: 30px;
+  margin-bottom: 200px;
+}
+
+.popup-info h2 {
+  font-size: 24px; 
+  font-weight: 600;
+}
+
+.popup-info p:first-of-type {
+  font-size: 14px; 
+  font-weight: 300;
+  margin-bottom: 30px; 
+}
+
+.popup-info p:last-of-type {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 30px; 
+}
+
+.popup-info p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* Nút Play Movie */
+.play-button {
+  background-color: #ff7f50;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 25px;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.play-button:hover {
+  background-color: #ff6347;
+}
+
+/* Nút đóng */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+
+/* LOGIN */
+.login-register-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: #f7f7f7; 
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+}
+
+/* Cấu hình chung cho các section đăng nhập và đăng ký */
+.login-section, .register-section {
+  width: 45%;
+  padding: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.login-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  
+  margin-top: 10px;
+  font-size: 14px;  
+}
+
+.login-options a {
+  color: #007bff; 
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.login-options a:hover {
+  text-decoration: underline;
+}
+
+.register-info {
+  font-size: 14px;
+  color: #555;
+  margin: 10px 0;
+}
+
+.login-btn, .register-btn {
+  background-color: #e67e22;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.login-btn:hover, .register-btn:hover {
+  background-color: #d35400;
+}
+
+.login-options label {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  cursor: pointer;
+  color: #555; 
+}
+
+.login-options label input {
+  margin-right: 5px;  
+}
+
+
+/* VIDEO MANAGER */
+.video-manager__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  width: 70%; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.video-manager__image {
+  width: 100px; 
+  height: auto;
+  margin-right: 20px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.video-manager__buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.video-manager__btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #ff5b5b;
+  color: #fff;
+}
+
+.video-manager__btn.delete-btn {
+  background-color: #ff5b5b;
+  color: white;
+}
+
+.video-manager__btn.edit-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.video-manager__input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.back-link {
+  text-decoration: none;
+  color: #fff;
+  background-color: #ff5b5b;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+
+.sort-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.sort-buttons button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #f04b5a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sort-buttons button:hover {
+  background-color: #d63e48;
+}
